@@ -14,7 +14,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh 'sonar-scanner -Dsonar.projectKey=forex-app -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=squ_4862e39454a38af56e413590c4ba130723c275bf'
+                    sh 'sonar-scanner -Dsonar.projectKey=forex-app -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=$SONAR_TOKEN'
                 }
             }
         }
